@@ -8,4 +8,4 @@ For your CPT, you will have two folders: `development` and `master`. In each fol
 You will do all your coding in this folder. This will likely contain code and sketches that are incomplete or maybe even don't even work. That is OK. Every day, you should upload your `development` folder to your repository. The easiest way to do this it to drag it from your desktop to the repository on [Github.com](https://github.com).
 
 ## Master Folder
-Once you have reached a milestone (e.g., `Add gravity to all objects`), and your game works, then you can **copy** the working code from teh `development` folder to the `master` folder, then drag the whole `master` folder from your desktop to your CPT repository. Keep in here *only* the files necessary for your game to run.
+Once you have reached a milestone (e.g., `Add gravity to all objects`), and your game works, then you can *copy* the working code from the `development` folder to the `master` folder, then drag the whole `master` folder from your desktop to your CPT repository. Keep in here *only* the files necessary for your game to run.
