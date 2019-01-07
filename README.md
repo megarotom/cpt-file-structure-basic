@@ -1,4 +1,4 @@
-# cpt-file-structure-basic
+# CPT File Structure
 
 The best way to use GitHub is to have a `development` branch and a `master` branch. I highly recommend doing it the right way, but, it can get a bit confusing for n00bs, so, here is an alternative.
 
