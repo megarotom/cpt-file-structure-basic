@@ -9,3 +9,13 @@ You will do all your coding in this folder. This will likely contain code and sk
 
 ## Master Folder
 Once you have reached a milestone (e.g., `Add gravity to all objects`), and your game works, then you can *copy* the working code from the `development` folder to the `master` folder, then drag the whole `master` folder from your desktop to your CPT repository. Keep in here *only* the files necessary for your game to run.
+
+## Workflow
+1. Download zip
+2. Make changes to the `development` files.
+3. When you reach a milestone (*and the progtram works*), replace the code in the `master` folder with the new code.
+4. Upload the `master` folder to your repository.
+    - Be sure to give it a proper commit message.
+5. Upload the `development` folder too.
+
+Rather than dragging and dropping files and folders from your computer into Github, you can edit the files in GitHub and paste the code in.
