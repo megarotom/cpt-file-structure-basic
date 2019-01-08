@@ -2,7 +2,7 @@
 # Not working as expected
 
 keys_pressed = [False for key_code in range(256)]
-GRAVITY = 0.5
+GRAVITY = 0.6
 
 def setup():
     global player_position
