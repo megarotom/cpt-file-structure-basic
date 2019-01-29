@@ -1,0 +1,235 @@
+key_pressed = [False for key_code in range(256)]
+
+x = 70
+y = 450
+guard_x = 400
+guard_y = 325
+guard_y_two = 375
+guard_speed_two = 1.5
+
+
+
+#there are 4 game screen in total
+#0=main menu
+#1=map_1
+#2=map_2
+#3=map_3
+
+
+def setup():
+    size(640, 480)
+    
+def main():
+    
+    noStroke()
+    fill(255,223,0)
+    textAlign(CENTER)
+    textSize(50)
+    text("STEALTHY",310,150)
+    textSize(20)
+    text("AVOID THE BLUE GUARDS,GRAB THE MONEY press E to play",310,250)
+    if key_pressed[69]:
+        map_3()
+    
+
+        
+def win_screen():
+    noStroke()
+    fill(255,223,0)
+    textAlign(CENTER)
+    textSize(30)
+    text("YOU WIN, press R to return to menu", 310, 250)
+    if key_pressed[82]:
+        main()
+    
+    
+def map_3():
+    global guard_x, guard_y, guard_speed, guard_y_two, guard_speed_two
+    game_screen=1
+    noStroke()
+    fill(255)
+    rect(35, 275, 25, 205)
+    rect(35, 275, 450, 25)
+    rect(475, 125, 25, 175)
+    rect(35, 125, 200, 25)
+    rect(235, 125, 25, 75)
+    rect(260, 175, -225, 25)
+    rect(35, 175, 25, 75)
+    rect(35, 240, 300, 25)
+    rect(335, 265, 25, -140)
+    rect(335, 125, 150, 25)
+    rect(125, 350, 25, 200)
+    rect(125, 350, 100, 25)
+    rect(225, 350, 25, 100)
+    rect(225, 425, 375, 25)
+    rect(575, 25, 25, 425)
+    rect(575, 25, -540, 25)
+    rect(35, 25, 25, 100)
+    fill(0, 255, 0)
+    ellipse(100, 220, 25, 25)
+    if guard_y <= 325:
+        guard_speed = 1.5
+    if guard_y >= 375:
+        guard_speed = -1.5
+    guard_y += guard_speed
+    fill(0, 0, 255)
+    rect(275, guard_y, 25, 25)
+    rect(425, guard_y, 25, 25)
+    fill(255, 255, 0)
+    rect(425, guard_y + 25, 25, 25)
+    rect(425, guard_y - 25, 25, 25)
+    rect(275, guard_y + 25, 25, 25)
+    rect(275, guard_y - 25, 25, 25)
+    if guard_y_two >= 375:
+        guard_speed = 1.5
+    if guard_y_two <= 325:
+        guard_speed = -1.5
+    guard_y_two -= guard_speed
+    fill(0, 0, 255)
+    rect(350, guard_y_two, 25, 25)
+    fill(255, 255, 0)
+    rect(350, guard_y_two - 25, 25, 25)
+    rect(350, guard_y_two + 25, 25, 25)
+    if guard_x <= 150:
+        guard_speed_two = -2.5
+    if guard_x >= 400:
+        guard_speed_two = 2.5
+    guard_x -= guard_speed_two
+    fill(0, 0, 255)
+    rect(guard_x, 75, 25, 25)
+    fill(255, 255, 0)
+    rect(guard_x + 25, 75, 65, 25)
+    rect(guard_x - 65, 75, 65, 25)
+
+
+def map_2():
+    global guard_x, guard_speed
+    noStroke()
+    fill(255)
+    rect(35, 375, 25, 205)
+    rect(115 , 445, 25, 205)
+    rect(115, 445, 495, 25)
+    rect(35, 375, 495, 25 )
+    rect(590, 255, 25, 215)
+    rect(505, 315, 25, 85)
+    rect(35, 315, 480, 25)
+    rect(115, 245, 500, 25)
+    rect(35, 125, 25, 215)
+    rect(35, 100, 580, 25)
+    rect(115, 185, 25, 85)
+    rect(115, 185, 500, 25)
+    rect(590, 105, 25, 80)
+    fill(0, 255, 0)
+    ellipse(550, 150, 25, 25)
+    fill(125)
+    rect(60, 315, 45, 25)
+    rect(60, 375, 45, 25)
+    if guard_x >= 400:
+        guard_speed = -6.5
+    if guard_x < 150:
+        guard_speed = 7.5
+    guard_x += guard_speed
+    fill(255, 255, 0)
+    triangle(guard_x + 10, 292.5, guard_x + 95, 292.5 + 25, guard_x + 95, 292.5 - 25)
+    triangle(guard_x + 15, 292.5, guard_x - 95, 292.5 + 25, guard_x - 95, 292.5 - 25)
+    triangle(guard_x + 10, 422.5, guard_x + 95, 422.5 + 25, guard_x + 95, 422.5 - 25)
+    triangle(guard_x + 15, 422.5, guard_x - 95, 422.5 + 25, guard_x - 95, 422.5 - 25)
+    fill(0, 0, 255)
+    rect(guard_x, 280, 25, 25)
+    rect(guard_x, 410, 25, 25)
+
+
+def map_1():
+    global guard_x, guard_speed
+    noStroke()
+    fill(255)
+    rect(width - 600, -height / 2, 25, 1000)
+    rect(width - 80, -height / 2, 25, 1000)
+    rect(60, 0, 500, 25)
+    rect(180, 150, 250, 25)
+    rect(180, 300, 250, 25)
+    rect(width - 235, height / 2 + 80, 25, 200)
+    rect(width - 460, height / 2 + 80, 25, 200)
+    fill(0, 255, 0)
+    ellipse(525, 450, 25, 25)
+    if guard_x >= 400:
+        guard_speed = -2.5
+    if guard_x < 200:
+        guard_speed = 2.5
+    guard_x += guard_speed
+    fill(255, 255, 0)
+    triangle(guard_x + 5, height/ 2, guard_x + 75, height/ 2 + 52.5, guard_x + 75, height/ 2 - 52.5)
+    triangle(guard_x + 15, height/2, guard_x - 60, height/ 2 - 50, guard_x - 60, height/ 2 + 50)
+    fill(0, 0, 255)
+    rect(guard_x, height/ 2 - 10, 20, 20)
+
+    if guard_x >= 400:
+        guard_speed = -0.5
+    if guard_x < 200:
+        guard_speed = 0.5
+    
+    guard_x += guard_speed
+        
+    fill(255, 255, 0)
+    triangle(guard_x + 5, height/ 2, guard_x + 75, height/ 2 + 52.5, guard_x + 75, height/ 2 - 52.5)
+    triangle(guard_x + 15, height/2, guard_x - 60, height/ 2 - 50, guard_x - 60, height/ 2 + 50)
+    
+    fill(0, 0, 255)
+    rect(guard_x, height/ 2 - 10, 20, 20)
+
+    
+        
+def draw():
+    global x, y
+    background(0)
+    
+    main()
+    
+    if key_pressed[38]:
+        y -= 3
+        # TODO: turn this into a function that returns a boolean
+        col = get(x, y)
+        if col == color(255):
+            y+=3
+        elif col==color(255,255,0) or col==color(0,0,255):
+            exit()
+    if key_pressed[40]:
+        # TODO: turn this into a function that returns a boolean
+        y += 3
+        col = get(x+18, y+18)
+        if col == color(255):
+            y-=3
+        elif col==color(255,255,0) or col==color(0,0,255):
+            exit()
+    if key_pressed[37]:
+        # TODO: turn this into a function that returns a boolean
+        x -= 3
+        col = get(x, y)
+        if col == color(255):
+            x+=3
+        elif col==color(255,255,0) or col==color(0,0,255):
+            exit()
+    if key_pressed[39]:
+        # TODO: turn this into a function that returns a boolean
+        x += 3
+        col = get(x+18, y+18)
+        if col == color(255):
+            x-=3
+        elif col==color(255,255,0) or col==color(0,0,255):
+            exit()
+        elif col==color(0,255,0):
+            win_screen()
+        
+    
+    fill(255, 0, 0)
+    rect(x, y, 20, 20)
+
+    # print(red(col), green(col), blue(col))
+    
+def keyPressed():
+    global key_pressed
+    key_pressed[keyCode] = True
+    
+def keyReleased():
+    global key_pressed
+    key_pressed[keyCode] = False
